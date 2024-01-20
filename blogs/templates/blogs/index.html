@@ -1,0 +1,25 @@
+{% extends "blogs/base.html" %}
+{% block page_header %}
+  <p>Footblog helps you keep track of the lastest happenings in football, for any
+    topic you are interested in.
+  </p>
+{% endblock page_header %}
+{% block content %}
+  <main class="container">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary card">
+      <div class="card-body">
+        <h1 class="display-4 fst-italic">{{ blogs.text }}</h1>
+        <p class="lead my-3">{{ short_tweet }}</p>
+        <p class="lead mb-0"><a href="{% url 'blogs:blog' 1 %}" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Features</h5>
+        <p class="card-text">To read more articles click on <a class="text-primary" href="{% url 'blogs:blogs' %}">topics</a>. If you are interested in 
+        writing articles on footblog register an account to continue</p>
+        <a href="{% url 'accounts:register' %}" class="btn btn-primary">Register</a>
+      </div>
+    </div>
+  </main>
+{% endblock content %}
